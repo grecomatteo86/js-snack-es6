@@ -54,14 +54,12 @@ const nuovoArreySquadre = [];
 
 for (let i = 0; i < arreySquadre.length; i++) {
 
-  let obj = {
+  const {nome,falliSubiti} = arreySquadre[i];
 
-    nome: arreySquadre[i].nome,
-    falliSubiti: arreySquadre[i].falliSubiti
-
-  };
-
-  nuovoArreySquadre.push(obj);
+  nuovoArreySquadre.push({
+    nome,
+    falliSubiti
+  });
 
 }
 
