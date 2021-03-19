@@ -52,9 +52,9 @@ e stampo tutto in console */
 
 const nuovoArreySquadre = [];
 
-for (var i = 0; i < arreySquadre.length; i++) {
+for (let i = 0; i < arreySquadre.length; i++) {
 
-  var obj = {
+  let obj = {
 
     nome: arreySquadre[i].nome,
     falliSubiti: arreySquadre[i].falliSubiti
