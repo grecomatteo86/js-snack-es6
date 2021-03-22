@@ -32,9 +32,10 @@ function randomizzatore (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+
 /* Cambio i valori assegnando numeri random
 al posto di Punti fatti e falli subiti */
-
+/*
 for (let i = 0; i < arreySquadre.length; i++) {
 
   arreySquadre[i].puntiFatti = randomizzatore (0, 10);
@@ -43,13 +44,13 @@ for (let i = 0; i < arreySquadre.length; i++) {
 
 }
 
-console.log(arreySquadre);
+console.log(arreySquadre);*/
 
 
 /* Uso la destrutturazione per creare un nuovo array
 i cui elementi contengono solo nomi e falli subiti
 e stampo tutto in console */
-
+/*
 const nuovoArreySquadre = [];
 
 for (let i = 0; i < arreySquadre.length; i++) {
@@ -63,4 +64,20 @@ for (let i = 0; i < arreySquadre.length; i++) {
 
 }
 
-console.log(nuovoArreySquadre);
+console.log(nuovoArreySquadre);*/
+
+/* Ulitlizzando MAP */
+
+const newArreySquadre = arreySquadre.map((item) => {
+
+  item.puntiFatti = randomizzatore (0, 10);
+
+  item.falliSubiti = randomizzatore (0, 10);
+
+  const {nome,falliSubiti} = item;
+
+  return {nome,falliSubiti};
+
+});
+
+console.log(newArreySquadre);
