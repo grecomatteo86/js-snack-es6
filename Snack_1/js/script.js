@@ -1,33 +1,21 @@
-/* Creare un array di oggetti:
-ogni oggetto descriverà una bici da corsa
-con le seguenti proprietà: nome e peso.
-Stampare a schermo la bici con peso minore */
-
-const arrayBici = [
+const bikesArray = [
   {
-    nome:'Atala',
-    peso: '2500',
+    name:'Atala',
+    weight: '2500',
   },
   {
-    nome:'Bianchi',
-    peso: '2200',
+    name:'Bianchi',
+    weight: '2200',
   },
   {
-    nome:'Girardengo',
-    peso: '2100',
+    name:'Girardengo',
+    weight: '2100',
   }
 ];
-
-var pesoRiferimento = arrayBici[0].peso;
-
-for ( let i = 0; i < arrayBici.length; i++ ) {
-
-  if ( arrayBici[i].peso < pesoRiferimento) {
-
-    pesoRiferimento = arrayBici[i].peso;
-
+var referenceWeight = bikesArray[0].weight;
+for ( let i = 0; i < bikesArray.length; i++ ) {
+  if ( bikesArray[i].weight < referenceWeight) {
+    referenceWeight = bikesArray[i].weight;
   }
-
 }
-
-console.log(pesoRiferimento);
+console.log(referenceWeight);
