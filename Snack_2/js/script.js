@@ -1,83 +1,39 @@
-/* Creare un array di oggetti di squadre di calcio.
-Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-Nome sarà l’unica proprietà da compilare,
-le altre saranno tutte settate a 0.
-Generare numeri random al posto degli 0 nelle proprietà:
-Punti fatti e falli subiti.
-Infine usando la destrutturazione creiamo un nuovo array
-i cui elementi contengono solo nomi e falli subiti
-e stampiamo tutto in console */
-
-/* Creo un array di oggetti di squadre di calcio */
-const arreySquadre = [
+const teamsArray = [
   {
-    nome:'Palermo',
-    puntiFatti:'0',
-    falliSubiti:'0'
+    name:'Palermo',
+    score:'0',
+    fauls:'0'
   },
   {
-    nome:'Catania',
-    puntiFatti:'0',
-    falliSubiti:'0'
+    name:'Catania',
+    score:'0',
+    fauls:'0'
   },
   {
-    nome:'Messina',
-    puntiFatti:'0',
-    falliSubiti:'0'
+    name:'Messina',
+    score:'0',
+    fauls:'0'
   }
 ];
-
-/* Creo la mia funzione randomizzatore */
-function randomizzatore (min, max) {
+// Using Destructuring
+/*
+const newTeamsArray = [];
+for (let i = 0; i < teamsArray.length; i++) {
+  const {name,fauls} = teamsArray[i];
+  newTeamsArray.push({
+    name,
+    fauls
+  });
+}
+/* Using MAP */
+const newTeamsArray = teamsArray.map((item) => {
+  item.score = randomizer (0, 10);
+  item.fauls = randomizer (0, 10);
+  const {name,fauls} = item;
+  return {name,fauls};
+});
+console.log(newTeamsArray);
+// Function - randomizer
+function randomizer (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
-
-/* Cambio i valori assegnando numeri random
-al posto di Punti fatti e falli subiti */
-/*
-for (let i = 0; i < arreySquadre.length; i++) {
-
-  arreySquadre[i].puntiFatti = randomizzatore (0, 10);
-
-  arreySquadre[i].falliSubiti = randomizzatore (0, 10);
-
-}
-
-console.log(arreySquadre);*/
-
-
-/* Uso la destrutturazione per creare un nuovo array
-i cui elementi contengono solo nomi e falli subiti
-e stampo tutto in console */
-/*
-const nuovoArreySquadre = [];
-
-for (let i = 0; i < arreySquadre.length; i++) {
-
-  const {nome,falliSubiti} = arreySquadre[i];
-
-  nuovoArreySquadre.push({
-    nome,
-    falliSubiti
-  });
-
-}
-
-console.log(nuovoArreySquadre);*/
-
-/* Ulitlizzando MAP */
-
-const newArreySquadre = arreySquadre.map((item) => {
-
-  item.puntiFatti = randomizzatore (0, 10);
-
-  item.falliSubiti = randomizzatore (0, 10);
-
-  const {nome,falliSubiti} = item;
-
-  return {nome,falliSubiti};
-
-});
-
-console.log(newArreySquadre);
